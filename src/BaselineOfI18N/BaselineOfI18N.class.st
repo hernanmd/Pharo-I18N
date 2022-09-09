@@ -17,15 +17,20 @@ BaselineOfI18N >> baseline: spec [
 		"Versions"
 		spec 
 			for: #(#'pharo7.x' #'pharo8.x' #'pharo9.x')
-			do: [ spec package: 'I18N-Tools' with: [ spec requires: #('I18N-Core' ) ] ].
+			do: [ 
+				spec 
+					package: 'I18N-Tools' with: [ spec requires: #('I18N-Core' ) ];
+					group: 'Tools' with: #('I18N-Tools' ) ].
 		spec 
 			for: #(#'pharo10.x' #'pharo11.x')
-			do: [ spec package: 'I18N-Tools-Spec2' with: [ spec requires: #('I18N-Core') ] ].
+			do: [ 
+				spec 
+					package: 'I18N-Tools-Spec2' with: [ spec requires: #('I18N-Core') ];
+					group: 'Tools' with: #('I18N-Tools-Spec2' ) ].
 
 		"Groups"	
 		spec 
 			group: 'Core' with: #('I18N-Core' );
-			group: 'Tools' with: #('I18N-Tools' );
 			group: 'Tests' with: #('I18N-Tests-Core' );
 			group: 'all' with: #('Core' 'Tools' 'Tests' );
 			group: 'default' with: #('all' ) ]
